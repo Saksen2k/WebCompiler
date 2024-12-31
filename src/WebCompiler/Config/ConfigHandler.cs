@@ -68,6 +68,7 @@ namespace WebCompiler
                     babel = new BabelOptions(),
                     coffeescript = new IcedCoffeeScriptOptions(),
                     handlebars = new HandlebarsOptions(),
+                    tailwindcss = new TailwindOptions(),
                 },
                 minifiers = new
                 {

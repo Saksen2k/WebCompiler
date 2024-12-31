@@ -133,7 +133,55 @@ Here's an example of what that file looks like:
     "options":{
         "sourceMap": true
     }
+  },
+  {
+    "outputFile": "output/tailwind.css",
+    "inputFile": "input/tailwind.css",
+    "minify": {
+        "enabled": true
+    },
+    "includeInProject": true,
+    "options":{
+        "sourceMap": true,
+        "tailwindConfig": "tailwind.config.js"
+    }
   }
 ]
 ```
-Default values for `compilerconfig.json` can be found in the `compilerconfig.json.defaults` file in the same location. 
+
+### Using Tailwind CSS
+
+To use Tailwind CSS with this addon, follow these steps:
+
+1. Install Tailwind CSS via npm:
+   ```sh
+   npm install tailwindcss
+   ```
+
+2. Create a `tailwind.config.js` file in the root of your project:
+   ```js
+   module.exports = {
+     purge: [],
+     darkMode: false, // or 'media' or 'class'
+     theme: {
+       extend: {},
+     },
+     variants: {
+       extend: {},
+     },
+     plugins: [],
+   }
+   ```
+
+3. Add the following to your `input/tailwind.css` file:
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
+
+4. Update your `compilerconfig.json` file to include the Tailwind CSS configuration as shown in the example above.
+
+5. Right-click the `compilerconfig.json` file in Solution Explorer and select "Recompile".
+
+6. Your Tailwind CSS will now be compiled and included in the output file specified in the `compilerconfig.json` file.
