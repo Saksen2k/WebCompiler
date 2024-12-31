@@ -31,7 +31,7 @@ for changes and roadmap.
 
 ### Getting started
 
-Right-click any `.less`, `.scss`, `.styl`, `.jsx`, `.es6` or `.coffee` file in Solution Explorer to
+Right-click any `.less`, `.scss`, `.styl`, `.jsx`, `.es6`, `.coffee`, or `.css` file in Solution Explorer to
 setup compilation.
 
 ![Compile file](art/contextmenu-compile.png)
@@ -46,7 +46,7 @@ run all the configured compilers.
 
 ### Compile on save
 
-Any time a `.less`, `.scss`, `.styl`, `.jsx`, `.es6` or `.coffee` file is modified within
+Any time a `.less`, `.scss`, `.styl`, `.jsx`, `.es6`, `.coffee`, or `.css` file is modified within
 Visual Studio, the compiler runs automatically to produce the compiled output file.
 
 The same is true when saving the `compilerconfig.json` file where
@@ -142,46 +142,9 @@ Here's an example of what that file looks like:
     },
     "includeInProject": true,
     "options":{
-        "sourceMap": true,
-        "tailwindConfig": "tailwind.config.js"
+        "sourceMap": true
     }
   }
 ]
 ```
-
-### Using Tailwind CSS
-
-To use Tailwind CSS with this addon, follow these steps:
-
-1. Install Tailwind CSS via npm:
-   ```sh
-   npm install tailwindcss
-   ```
-
-2. Create a `tailwind.config.js` file in the root of your project:
-   ```js
-   module.exports = {
-     purge: [],
-     darkMode: false, // or 'media' or 'class'
-     theme: {
-       extend: {},
-     },
-     variants: {
-       extend: {},
-     },
-     plugins: [],
-   }
-   ```
-
-3. Add the following to your `input/tailwind.css` file:
-   ```css
-   @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
-   ```
-
-4. Update your `compilerconfig.json` file to include the Tailwind CSS configuration as shown in the example above.
-
-5. Right-click the `compilerconfig.json` file in Solution Explorer and select "Recompile".
-
-6. Your Tailwind CSS will now be compiled and included in the output file specified in the `compilerconfig.json` file.
+Default values for `compilerconfig.json` can be found in the `compilerconfig.json.defaults` file in the same location. 
